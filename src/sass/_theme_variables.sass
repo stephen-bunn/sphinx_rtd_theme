@@ -2,6 +2,8 @@
 // that are set in wyrm_core/wy_variables.sass. You'll find wyrm in bower_components if you're looking
 // for a reference.
 
+@import theme_colors
+
 $fa-font-path:                        "~font-awesome/fonts"
 $static-img:                          "../img/"
 
@@ -44,13 +46,13 @@ $menu-link-light:                     $text-lighter
 $menu-link-active:                    $white
 
 // Navigation colors
-$nav-background-color:                $menu-background-color
-$nav-search-background-color:         $blue
-$nav-search-color:                    $section-background-color
+$nav-background-color:                $dracula-black
+$nav-search-background-color:         $dracula-black
+$nav-search-color:                    $dracula-purple
 $nav-link-color:                      $blue
 $nav-link-color-visited:              $purple
 $nav-link-color-hover:                lighten($nav-link-color, 6%) !default
-$nav-link-color-alt:                  hsl(33, 100%, 51%)
+$nav-link-color-alt:                  $orange
 $nav-caption:                         lighten($blue, 15%)
 
 // Sidebar colors
@@ -59,11 +61,12 @@ $sidebar-border-color:                $table-border-color
 $sidebar-title-background-color:      $table-border-color
 
 // Sphinx highlight color
-$highlight-color:                     $yellow
+$highlight-color:                     $dracula-background
+$linenos-color:                       $gray-dark
 
 $base-font-family:                    "Lato", "proxima-nova", "Helvetica Neue", Arial, sans-serif
 $custom-font-family:                  "Roboto Slab", "ff-tisa-web-pro", "Georgia", Arial, sans-serif
 $custom-font-family2:                 Georgia, serif
-$code-font-family:                    SFMono-Regular, Menlo, Monaco, Consolas, "Liberation Mono", "Courier New", Courier, monospace
+$code-font-family:                    Fira Code, SFMono-Regular, Menlo, Monaco, Consolas, "Liberation Mono", "Courier New", Courier, monospace
 
 $font-display:                        block
