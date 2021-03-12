@@ -71,8 +71,18 @@
       margin: 0
   // Needs 100% width for line highlighting to work properly
   div[class^='highlight'] td.code
+    padding: 0
     width: 100%
+  .linenos
+    background-color: $background-color
+    padding: 0
+  .linenodiv
+    background-color: $background-color
+    padding: 0
   .linenodiv pre
+    background-color: $background-color
+    color: $text-invert
+    border: none
     border-right: solid 1px lighten($table-border-color, 2%)
     margin: 0
     padding: $base-line-height / 2 $base-line-height / 2
@@ -111,9 +121,39 @@
     .codeblock, div[class^='highlight'], div[class^='highlight'] pre
       white-space: pre-wrap
 
+  .note
+    .admonition-title
+      background-color: $megu-crimson
+
+  .attention,
+  .caution
+    .admonition-title
+      background-color: $megu-orange
+
+  .danger,
+  .error
+    .admonition-title
+      background-color: $megu-red
+
+  .hint,
+  .important,
+  .tip
+    .admonition-title
+      background-color: $megu-teal
+
+  .warning
+    .admonition-title
+      background-color: $megu-orange
+
+  .seealso
+    .admonition-title
+      background-color: $megu-teal
+
   // These are the various note pullouts that sphinx applies
   .note, .attention, .caution, .danger, .error, .hint, .important, .tip, .warning, .seealso, .admonition-todo, .admonition
     @extend .wy-alert
+    background-color: $text-invert
+    color: $text-color
     // These block elements are unsuitable for having floating objects next
     // to them
     clear: both
@@ -230,6 +270,7 @@
     .last, > *:last-child
       margin-bottom: 0
     .sidebar-title
+      color: $text-invert
       display: block
       font-family: $custom-font-family
       font-weight: bold
@@ -378,7 +419,7 @@
       color: $text-code-color
     &.xref, a &
       font-weight: bold
-      color: $text-codexref-color
+      color: $megu-beige
   pre, kbd, samp
     font-family: $code-font-family
   // If the literal is inside an a tag, let's color it like a link
@@ -404,27 +445,33 @@
       margin: $base-line-height / 4 0
       font-size: 90%
       line-height: normal
-      background: lighten($class-color, 50%)
-      color: $class-color
-      border-top: solid 3px lighten($class-color, 20%)
+      background: $megu-papyrus
+      color: $megu-crimson
+      border-top: solid 3px $megu-crimson
       padding: $base-line-height / 4
       position: relative
       &:before
-        color: lighten($class-color, 20%)
+        color: lighten($megu-crimson, 20%)
       .headerlink
         color: $text-color
         font-size: 100% !important
+      code.sig-prename
+        color: $megu-crimson
+      code.sig-name
+        color: $megu-red
     // In the html4 writer, parameters is a table. In html5 writer, parameters
     // is a nested dl.field-list
     dl:not(.field-list) > dt
       margin-bottom: $base-line-height / 4
       border: none
-      border-left: solid 3px hsl(0,0%,80%)
-      background: hsl(0,0%,94%)
-      color: $method-color
+      border-left: solid 3px $megu-crimson
+      background: $megu-papyrus
+      color: $megu-red
       .headerlink
         color: $headerlink-color
         font-size: 100% !important
+      code.sig-name
+        color: $megu-crimson
     > dt:first-child
       margin-top: 0
     // Since dts get the callout style, we treat this less as callouts.
